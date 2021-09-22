@@ -32,6 +32,19 @@ public class TestDe {
 		System.out.println("\nTEST Dé pipé");
 		De d4 = new DePipe("", 80, 70);
 		System.out.println(d4.getNom() + " : " + d4.lancer());
+		
+		De d5 = new DeEffetMemoire("", 3);
+		System.out.println("\nTEST Dé à effet mémoire");
+		int lancerPrecedent = d5.lancer();
+		System.out.print("Lancer le dé 10 fois : " + lancerPrecedent);
+		for(int i=0; i<9; i++) {
+			int lancerSuivant = d5.lancer();
+			if (lancerPrecedent == lancerSuivant) {
+				System.err.print(" " + lancerSuivant);
+			}
+			else {System.out.print(" " + lancerSuivant);}
+			lancerPrecedent = lancerSuivant;
+		}
 	}
 
 }
