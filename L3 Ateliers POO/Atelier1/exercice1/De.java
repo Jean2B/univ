@@ -10,7 +10,11 @@ public class De {
 	protected String nom;
 	protected int nbFaces;
 	
-	//Constructeur du dé
+	/**
+	 * Constructeur du dé
+	 * @param nom le nom du dé
+	 * @param nbFaces le nombre de faces du dé
+	 */
 	public De(String nom, int nbFaces) {
 		if (nom == "" || nom == null) {
 			this.nom = "Dé n°" + (nbDes+1); //Nom par défaut si le nom est vide
@@ -27,17 +31,26 @@ public class De {
 		this("", 6); //Dé à 6 faces par défaut
 	}
 	
-	//Nom du dé
+	/**
+	 * Accesseur
+	 * @return Retourne le nom du dé
+	 */
 	public String getNom() {
 		return nom;
 	}
 	
-	//Nombre de faces du dé
+	/**
+	 * Accesseur
+	 * @return Retourne le nombre de faces du dé
+	 */
 	public int getNbFaces() {
 		return nbFaces;
 	}
 	
-	//Changer le nombre de faces du dé
+	/**
+	 * Modificateur
+	 * @param nbFaces le nombre de faces du dé	 
+	 */
 	public void setNbFaces(int nbFaces) {
 		if (nbFaces < FACESMIN || nbFaces > FACESMAX) {
 			System.err.println("Nombre de faces du dé incorrect");

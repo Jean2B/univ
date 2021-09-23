@@ -3,7 +3,11 @@ package exercice1;
 public class DeEffetMemoire extends De {
 	private int dernierLancer;
 	
-	//Constructeur du dé à effet mémoire
+	/**
+	 * Constructeur du dé à effet mémoire
+	 * @param nom le nom du dé
+	 * @param nbFaces le nombre de faces du dé
+	 */
 	public DeEffetMemoire(String nom, int nbFaces) {
 		super(nom, nbFaces);
 		this.dernierLancer = 0;
