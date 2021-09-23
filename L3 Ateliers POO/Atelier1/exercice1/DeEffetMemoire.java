@@ -13,12 +13,16 @@ public class DeEffetMemoire extends De {
 		this.dernierLancer = 0;
 	}
 	
-	//Constructeur du dé à effet mémoire sans paramètre
+	/**
+	 * Constructeur du dé à effet mémoire sans paramètre
+	 */
 	public DeEffetMemoire() {
 		this("", 6);
 	}
 	
-	//Lancer le dé à effet mémoire
+	/**Lancer le dé à effet mémoire
+	 * @return Retourne la valeur du dé
+	 */
 	public int lancer() {
 		int numero = super.lancer();
 		while (numero == dernierLancer) {

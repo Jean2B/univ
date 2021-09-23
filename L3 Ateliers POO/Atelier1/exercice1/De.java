@@ -26,7 +26,9 @@ public class De {
 		nbDes++;
 	}
 	
-	//Constructeur du dé sans paramètre
+	/**
+	 * Constructeur du dé sans paramètre
+	 */
 	public De() {
 		this("", 6); //Dé à 6 faces par défaut
 	}
@@ -58,12 +60,17 @@ public class De {
 		else {this.nbFaces = nbFaces;}
 	}
 	
-	//Lancer le dé
+	/**Lancer le dé
+	 * @return Retourne la valeur du dé
+	 */
 	public int lancer() {
 		return r.nextInt(nbFaces) + 1;
 	}
 	
-	//Lancer le dé plusieurs fois
+	/**Lancer le dé plusieurs fois
+	 * @param nbLancer nombre de lancers
+	 * @return Retourne la meilleure valeur du dé
+	 */
 	public int lancer(int nbLancer) {
 		int meilleurLancer = 0;
 		for(int i=0; i<nbLancer; i++) {

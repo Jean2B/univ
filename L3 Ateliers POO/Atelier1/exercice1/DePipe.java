@@ -28,7 +28,9 @@ public class DePipe extends De {
 		this("", 6, borneMin);
 	}
 	
-	//Lancer le dé pipé
+	/**Lancer le dé pipé
+	 * @return Retourne la valeur du dé
+	 */
 	public int lancer() {
 		int numero = 0;
 		while (numero < borneMin) {
