@@ -1,6 +1,6 @@
 package test;
 
-import util.*;
+import util.Personne;
 
 public class TestQuestion1 {
 

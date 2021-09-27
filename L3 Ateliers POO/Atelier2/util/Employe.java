@@ -3,8 +3,8 @@ package util;
 import java.util.*;
 
 public class Employe extends Personne{
-	private float salaire;
-    private final GregorianCalendar dateEmbauche;
+	protected float salaire;
+    protected final GregorianCalendar dateEmbauche;
 	
     /**
      * Constructeur d'Employe
