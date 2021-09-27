@@ -9,6 +9,8 @@ public class TestQuestion1 {
 		Personne p1 = new Personne("Test", "Personne", 6, 7, 2000, 8, "RueTest", "88888", "TestVille");
 		Personne p2 = new Personne("Test", "Personne", 3, 4, 2002, 8, "RueTest", "88888", "TestVille");
 		Personne p3 = new Personne("Test", "Personne", 6, 7, 2000, 8, "RueTest", "88888", "TestVille");
+		
+		System.out.println("Nombre de personnes : " + Personne.getNbPersonnes());
 
 		//Test plusAgee et plusAgeeQue
 		System.out.println("Test plusAgee : p1 est plus âgée que p2");
