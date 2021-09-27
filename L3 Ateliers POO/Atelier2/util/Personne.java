@@ -6,11 +6,14 @@ import util.Adresse;
 
 public class Personne{
     private static final Adresse ADRESSE_INCONNUE = null;
+    private static final int AGE_MAJORITE = 18;
     private String nom;
     private String prenom;
     private final GregorianCalendar dateNaissance;
     private Adresse adresse=ADRESSE_INCONNUE;
     private static int nbPersonnes = 0;
+    private static String nomDernierePersonneCree;
+    private int ageObtentionDernierDiplome;
 	
 	/**
 	 * Constructeur de Personne
@@ -25,6 +28,7 @@ public class Personne{
 		dateNaissance=laDate;
 		adresse=lAdresse;
 		nbPersonnes++;
+		nomDernierePersonneCree = nom;
 	}
 	
 	/** 
@@ -49,6 +53,22 @@ public class Personne{
 	 */
 	public static int getNbPersonnes() {
 		return nbPersonnes;
+	}
+	
+	/**
+	 * Accesseur
+	 * @return Âge de la majorité
+	 */
+	public static int getAgeMajorite() {
+		return AGE_MAJORITE;
+	}
+	
+	/**
+	 * Accesseur
+	 * @return Âge lors de l'obtention du dernier diplôme
+	 */
+	public int getAgeObtentionDernierDiplome() {
+		return ageObtentionDernierDiplome;
 	}
 
 	/**
@@ -76,6 +96,7 @@ public class Personne{
 	 * Accesseur
 	 * @return retourne l'adresse	 
 	 */
+
 	public Adresse getAdresse() {
 		return adresse;
 	}
@@ -121,7 +142,7 @@ public class Personne{
 	//Comparaison de deux personnes (nom, prénom et date de naissance)
 	public boolean equals(Object obj) {
 		boolean res = false;
-		if (obj instanceof Personne) {
+		if (obj instanceof Personne && obj != null) {
 			Personne objPersonne = (Personne)obj;
 			res = objPersonne.nom.equals(this.nom) && objPersonne.prenom.equals(this.prenom)
 					&& objPersonne.dateNaissance.equals(this.dateNaissance);

@@ -93,7 +93,9 @@ public class Secretaire extends Employe{
 	public void augmenterLeSalaire(float pourcentage) {
 		if (pourcentage > 0) {
 			pourcentage += this.getNbManagers() * BONUSSALAIRE;
-			this.salaire += this.salaire * (pourcentage/100);
+			double salaire = getSalaire();
+			salaire += salaire * (pourcentage/100);
+			setSalaire(salaire);
 		}
 	}
 	

@@ -3,8 +3,8 @@ package util;
 import java.util.*;
 
 public class Employe extends Personne{
-	protected float salaire;
-    protected final GregorianCalendar dateEmbauche;
+	private double salaire;
+    private final GregorianCalendar dateEmbauche;
 	
     /**
      * Constructeur d'Employe
@@ -74,11 +74,27 @@ public class Employe extends Personne{
 		return em;
 	}
 	
+	/**
+	 * Accesseur
+	 * @return Retourne le salaire de l'employé
+	 */
+	public double getSalaire() {
+		return salaire;
+	}
+	
+	/**
+	 * Modificateur
+	 * @param nouveauSalaire Nouveau salaire de l'employé
+	 */
+	protected void setSalaire(double nouveauSalaire) {
+		salaire = nouveauSalaire;
+	}
+	
 	/**Méthode augmenterLeSalaire
 	 * Augmente le salaire d'un employé suivant un pourcentage donné
 	 * @param pourcentage Pourcentage d'augementation du salaire
 	 */
-	public void augmenterLeSalaire(float pourcentage) {
+	public void augmenterLeSalaire(double pourcentage) {
 		if (pourcentage > 0) {
 			this.salaire += this.salaire * (pourcentage/100);
 		}
@@ -89,6 +105,6 @@ public class Employe extends Personne{
 	 */
 	public int calculAnnuite() {
 		Calendar rightNow = Calendar.getInstance();
-		return dateEmbauche.get(Calendar.YEAR) - rightNow.get(Calendar.YEAR);
+		return rightNow.get(Calendar.YEAR) - dateEmbauche.get(Calendar.YEAR) + 1;
 	}
 }
