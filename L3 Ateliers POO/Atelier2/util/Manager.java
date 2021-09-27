@@ -15,8 +15,8 @@ public class Manager extends Employe{
      * @param salaire le salaire de l'employé
      * @param dateEmbauche la date d'embauche de l'employé
      */
-	protected Manager(String leNom, String lePrenom, GregorianCalendar laDate,
-					  Adresse lAdresse, float salaire, GregorianCalendar dateEmbauche) {
+	private Manager(String leNom, String lePrenom, GregorianCalendar laDate,
+					  Adresse lAdresse, double salaire, GregorianCalendar dateEmbauche) {
 		super(leNom, lePrenom, laDate, lAdresse, salaire, dateEmbauche);
 	}
 	
@@ -36,9 +36,9 @@ public class Manager extends Employe{
 	 * @param mEmbauche le mois de la date d'embauche
 	 * @param aEmbauche l'année de la date d'embauche
      */
-	protected Manager(String leNom,String lePrenom, int jNaissance, int mNaissance, int aNaissance,
+	private Manager(String leNom,String lePrenom, int jNaissance, int mNaissance, int aNaissance,
 					  int numero, String rue, String code_postal, String ville,
-					  float salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
+					  double salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
 		this(leNom, lePrenom, new GregorianCalendar(aNaissance,mNaissance,jNaissance),
 			 new Adresse(numero,rue,code_postal,ville),
 			 salaire, new GregorianCalendar(aEmbauche,mEmbauche,jEmbauche));
@@ -65,7 +65,7 @@ public class Manager extends Employe{
 	public static Manager createManager(String leNom,String lePrenom,
 										int jNaissance, int mNaissance, int aNaissance,
 										int numero, String rue, String code_postal, String ville,
-										float salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
+										double salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
 		Manager ma = null;
 		if (salaire > 0) {
 			ma = new Manager(leNom, lePrenom, jNaissance, mNaissance, aNaissance,

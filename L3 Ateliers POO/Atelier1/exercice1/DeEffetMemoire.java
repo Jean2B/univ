@@ -24,7 +24,7 @@ public class DeEffetMemoire extends De {
 	 * @return Retourne la valeur du dé
 	 */
 	public int lancer() {
-		int numero = super.lancer();
+		int numero = dernierLancer;
 		while (numero == dernierLancer) {
 			numero = super.lancer();
 		}

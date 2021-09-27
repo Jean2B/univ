@@ -16,7 +16,7 @@ public class Employe extends Personne{
      * @param dateEmbauche la date d'embauche de l'employé
      */
 	protected Employe(String leNom, String lePrenom, GregorianCalendar laDate,
-					  Adresse lAdresse, float salaire, GregorianCalendar dateEmbauche) {
+					  Adresse lAdresse, double salaire, GregorianCalendar dateEmbauche) {
 		super(leNom, lePrenom, laDate, lAdresse);
 		this.salaire = salaire;
 		this.dateEmbauche = dateEmbauche;
@@ -40,7 +40,7 @@ public class Employe extends Personne{
      */
 	protected Employe(String leNom,String lePrenom, int jNaissance, int mNaissance, int aNaissance,
 					  int numero, String rue, String code_postal, String ville,
-					  float salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
+					  double salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
 		this(leNom, lePrenom, new GregorianCalendar(aNaissance,mNaissance,jNaissance),
 			 new Adresse(numero,rue,code_postal,ville),
 			 salaire, new GregorianCalendar(aEmbauche,mEmbauche,jEmbauche));
@@ -65,7 +65,7 @@ public class Employe extends Personne{
      */
 	public Employe createEmploye(String leNom,String lePrenom, int jNaissance, int mNaissance, int aNaissance,
 			  					 int numero, String rue, String code_postal, String ville,
-			  					 float salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
+			  					 double salaire, int jEmbauche, int mEmbauche, int aEmbauche) {
 		Employe em = null;
 		if (salaire > 0) {
 			em = new Employe(leNom, lePrenom, jNaissance, mNaissance, aNaissance,

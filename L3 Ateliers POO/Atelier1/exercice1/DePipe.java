@@ -1,7 +1,7 @@
 package exercice1;
 
 public class DePipe extends De {
-	private int borneMin;
+	private final int borneMin;
 	
 	/**
 	 * Constructeur du dé pipé
