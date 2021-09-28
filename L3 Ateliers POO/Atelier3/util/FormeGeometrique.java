@@ -10,7 +10,6 @@ public abstract class FormeGeometrique {
 	}
 	
 	abstract public double calculSurface();	
-	abstract public boolean equals(Object obj);
 	
 	public boolean compareSurface(Object obj) {
 		return (obj instanceof FormeGeometrique && obj != null)
