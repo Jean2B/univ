@@ -13,7 +13,7 @@ public class Sphere extends Forme3D {
 	}
 	
 	public double calculVolume() {
-		return Math.PI * Math.pow(rayon, 3);
+		return (4*Math.PI * Math.pow(rayon, 3)) / 3;
 	}
 	
 	public boolean equals(Object obj) {
