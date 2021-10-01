@@ -57,8 +57,8 @@ public class Jeu {
 	 * Initialisation des cases du jeu
 	 */
 	public void initialiserCases() {
+		int nbObs = 0; //Nombre d'obstacles créés
 		for(int i=0; i<NBCASES; i++) {
-			int nbObs = 0; //Nombre d'obstacles créés
 			int gain = r.nextInt(NBCASES) + 1;
 			cases[i] = new Case(gain);
 			if (gain%5 == 0 && nbObs < nbObstacles
@@ -81,6 +81,7 @@ public class Jeu {
 			while (!cases[i].estLibre() && i < NBCASES)
 				i++;
 			cases[i].placerPersonnage(perso);
+			perso.setPosition(i);
 		}
 		System.out.println("Le jeu commence");
 		int posSouhaitee = 0;
@@ -100,9 +101,9 @@ public class Jeu {
 					int penalite = caseSouhaitee.getPenalite();
 					perso.penaliser(penalite);
 				}
-				afficherCases();
 			}
 		}
+		afficherCases();
 		afficherResultats();
 	}
 	
@@ -128,7 +129,7 @@ public class Jeu {
 	 * @return Joueur qui a le plus de points
 	 */
 	public Joueur getGagnant() {
-		int nbPointsMax = 0;
+		int nbPointsMax = -1;
 		Joueur gagnant = null;
 		for (Joueur j:listeJoueurs) {
 			int nbPoints = j.getPoints();

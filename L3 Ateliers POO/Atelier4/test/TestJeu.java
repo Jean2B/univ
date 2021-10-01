@@ -5,7 +5,7 @@ import util.*;
 public class TestJeu {
 
 	public static void main(String[] args) {
-		for (int i=0; i<5; i++) {
+		for (int i=0; i<1; i++) {
 			Jeu jeu = new Jeu("AtelierPOO", 4, 10);
 			
 			Joueur j1 = new Joueur("Paul");

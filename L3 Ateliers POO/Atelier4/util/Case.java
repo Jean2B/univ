@@ -40,7 +40,7 @@ public class Case {
 		if (!sansObstacle())
 			penalite = obs.getPenalite(); //Pénalité si un obstacle est sur la case
 		else if (!sansPerso())
-			penalite = -gain; //Retire le gain au joueur si la case est déjà occupée
+			penalite = gain; //Retire le gain au joueur si la case est déjà occupée
 		return penalite;
 	}
 	
